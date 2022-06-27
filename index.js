@@ -153,6 +153,10 @@ const productList = document.getElementById('product-card');   /**html okay*/
 var sizeOption = document.getElementById("size-card");
 var foundItems = document.getElementById("found");
 
+/** for cart */
+var cartIcon = document.getElementById("#cart-icon");
+var cart = document.querySelector(".cart");
+var closeCart = document.querySelector("#close-cart");
 
 
 eventListeners();
@@ -169,13 +173,14 @@ function eventListeners(){
             console.log('clicked');
             /**function for add to cart */
         }
-    })
+    });
+
     window.addEventListener("click", (e) => {
         if(e.target.id == 'submit-button'){
             console.log('clicked');
             /**function for filter products */
         }
-    })
+    });
 
 }
 
@@ -188,31 +193,15 @@ foundItems.innerHTML += `${productArr.length}`+` `+`products found`;
 // load product items content form JSON file
 function loadJSON(){
     html="";
-    // const button = document.createElement('button');
-    //   button.classList.add('something')
-    //   button.textContent='Add To Cart';
     productArr.forEach((product) => {
-        // html += `<div class="product-1" href="#">
-        // <img src=${product.imgSrc} alt="" width="190" height="250">
-        // <div><p><b>${product.brand}</b></p><p>-</p><p>${`$`+ product.price }</p></div>
-        // <button type="button"><strong>Add to Cart</strong></button>
-        // </div>`
         html += `<div class="product-1" href="#">
-    <img src=${product.imgSrc} alt="" width="190" height="250">
-    <div><p><b>${product.brand}</b></p><p>-</p><p>${`$`+ product.price }</p></div>
-    <button type="button" id="add-to-cart"><strong id="add-to-cart">Add to Cart</strong></button>
-    </div>`;
+                 <img src=${product.imgSrc} alt="" width="190" height="250">
+                 <div><p><b>${product.brand}</b></p><p><b>-</b></p><p><b>${`$`+ product.price }</b></p></div>
+                 <button type="button" id="add-to-cart"><strong id="add-to-cart">Add to Cart</strong></button>
+                 </div>
+                 `;
          productList.innerHTML = html;
-    //   const button = document.createElement('button');
-    //   button.classList.add('something')
-    //   button.textContent='Add To Cart';
-    //   productList.appendChild(button)
-
-      
-
     });
-    
-
 }
 
 
@@ -227,16 +216,9 @@ function loadSizes(){
 
 
 
-// <button type="button"><strong>Add to Cart</strong></button>
 
 
-// productList.addEventListener("click", function(e) {
-//     if(e.target.id == 'something'){
-//         console.log('clicked');
-//     }
-    
 
-// })
 
 
 // products.forEach(item => {   // 1
@@ -259,3 +241,15 @@ function loadSizes(){
 // 		}
 // 	});
 // });
+
+
+
+//users = users.filter(x => x.size == 'L')
+
+
+
+
+// cartIcon.onclick = () =>  {
+//     cart.classList.add("active");
+//     /**function for cart icon */
+// };
