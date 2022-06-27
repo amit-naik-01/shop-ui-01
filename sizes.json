@@ -1,0 +1,38 @@
+[
+    {
+        "id":"1",
+        "label":"XS",
+        "value":"XS"
+    },
+    {
+        "id":"2",
+        "label":"S",
+        "value":"S"
+    },
+    {
+        "id":"3",
+        "label":"M",
+        "value":"M"
+    },
+    {
+        "id":"4",
+        "label":"ML",
+        "value":"ML"
+    },
+    {
+        "id":"5",
+        "label":"L",
+        "value":"L"
+    },
+    {
+        "id":"6",
+        "label":"XL",
+        "value":"XL"
+    },
+    {
+        "id":"7",
+        "label":"XXL",
+        "value":"XXL"
+    }
+
+]
