@@ -1,4 +1,43 @@
-var productArr = [
+var sizeArr = [
+    {
+        "id":"1",
+        "label":"XS",
+        "value":"XS"
+    },
+    {
+        "id":"2",
+        "label":"S",
+        "value":"S"
+    },
+    {
+        "id":"3",
+        "label":"M",
+        "value":"M"
+    },
+    {
+        "id":"4",
+        "label":"ML",
+        "value":"ML"
+    },
+    {
+        "id":"5",
+        "label":"L",
+        "value":"L"
+    },
+    {
+        "id":"6",
+        "label":"XL",
+        "value":"XL"
+    },
+    {
+        "id":"7",
+        "label":"XXL",
+        "value":"XXL"
+    }
+ 
+ ];
+ 
+ var productArr = [
     {
         "id":1,
         "type":"shirt",
@@ -111,6 +150,8 @@ var productArr = [
 
 
 const productList = document.getElementById('product-card');   /**html okay*/
+var sizeOption = document.getElementById("size-card");
+var foundItems = document.getElementById("found");
 
 
 
@@ -120,6 +161,7 @@ eventListeners();
 function eventListeners(){
     window.addEventListener('load', () => {
         loadJSON();
+        loadSizes();
     });
 
     window.addEventListener("click", (e) => {
@@ -128,9 +170,17 @@ function eventListeners(){
             /**function for add to cart */
         }
     })
-
+    window.addEventListener("click", (e) => {
+        if(e.target.id == 'submit-button'){
+            console.log('clicked');
+            /**function for filter products */
+        }
+    })
 
 }
+
+
+foundItems.innerHTML += `${productArr.length}`+` `+`products found`;
 
 
 
@@ -164,6 +214,18 @@ function loadJSON(){
     
 
 }
+
+
+function loadSizes(){
+    // for sizes 
+    sizeArr.map((size) => {return(
+        sizeOption.innerHTML += `<button id="submit-button" href="#" ><strong id="submit-button">${size.value}</strong></button>`
+    )});
+
+}
+
+
+
 
 // <button type="button"><strong>Add to Cart</strong></button>
 
